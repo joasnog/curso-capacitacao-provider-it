@@ -1,0 +1,101 @@
+<!-- 
+    Projeto de Ficha Cadastral do curso de capacitação Provider It
+    Professor: Luís Paiva
+    Autor: Idelfonso Joás de França Nogueira
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha Cadastral</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="scripts/main.js"></script>
+  </head>
+  <body>
+    <form action="">
+      <table cellspacing="1px" cellpadding="1px">
+        <caption>
+          <h2>Ficha Cadastral</h2>
+        </caption>
+  
+        <tr>
+          <!-- colspan="1" largura de uma celula por padrão -->
+          <!-- 1 + 3 = 4 de espaçamento total-->
+          <td>
+            <label for="nome"> Nome:</label>
+          </td>
+          <td colspan="3">
+            <input type="text" size="55" id="nome" />
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="rg">RG:</label>
+          </td>
+          <td>
+            <input type="text" size="13" id="rg" />
+          </td>
+          <td>
+            <label for="cpf">C.P.F.:</label>
+          </td>
+          <td>
+            <input type="text" size="13" id="cpf" />
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="endereco">Endereço:</label>
+          </td>
+          <td colspan="3">
+            <input type="text" size="55" id="endereco" />
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="sexo">Sexo:</label>
+          </td>
+          <td>
+            <select id="sexo">
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </td>
+          <td>
+            <label for="data-nascimento">Data Nascimento:</label>
+          </td>
+          <td>
+            <input type="text" size="13" id="data-nascimento" />
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Situação Civil</td>
+          <td>
+            <input type="radio" id="solteiro" name="situacao_civil" value="solteiro" />
+            <label for="situacao_civil">Solteiro(a)</label>
+          </td>
+          <td>
+            <input type="radio" id="casado" name="situacao_civil" value="casado" />
+            <label for="situacao_civil">Casado(a)</label>
+          </td>
+          <td>
+            <input type="radio" id="viuvo" name="situacao_civil" value="viuvo" />
+            <label for="situacao_civil">Viúvo(a)</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4">
+            <button>Limpar Dados</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

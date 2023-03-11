@@ -1,0 +1,23 @@
+body tr {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+}
+
+h2 {
+  /* Pega o valor inicial da fonte, não atribuindo o arial para o h2 */
+  font-family: initial;
+}
+
+table {
+  width: 500px;
+}
+
+/* Vai na tabela, pega o sexto elemento tr, pega o td dele e centraliza (botão) */
+table tr:nth-child(6) td {
+  text-align: center;
+}
+
+
+
+
+
