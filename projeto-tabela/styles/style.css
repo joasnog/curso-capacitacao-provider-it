@@ -1,0 +1,43 @@
+table {
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  width: 600px;
+}
+
+#table-header {
+  background-color: #0d5188;
+  color: white;
+}
+
+#table-columns {
+  background-color: #66c5e3;
+}
+
+.align-start {
+  text-align: start;
+}
+
+.silver-bg {
+  background-color: silver;
+}
+
+.dark-blue {
+  color: #0d5188;
+}
+
+.light-blue-bg {
+  background-color: #c7e7f3;
+}
+
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.width-10-per-cent {
+  width: 10%;
+}
+
+.width-15-per-cent {
+  width: 15%;
+}
