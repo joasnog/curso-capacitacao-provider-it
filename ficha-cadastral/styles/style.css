@@ -1,15 +1,21 @@
 body tr {
   font-family: "Arial", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 h2 {
   /* Pega o valor inicial da fonte, não atribuindo o arial para o h2 */
   font-family: initial;
+  text-align: center;
 }
 
 table {
   width: 500px;
+}
+
+/* Aumentar a largura das celulas da situacao civil para alinhar melhor */
+.increase-width {
+  width: 29%;
 }
 
 /* Vai na tabela, pega o sexto elemento tr, pega o td dele e centraliza (botão) */
