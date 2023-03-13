@@ -6,7 +6,6 @@ body tr {
 h2 {
   /* Pega o valor inicial da fonte, não atribuindo o arial para o h2 */
   font-family: initial;
-  text-align: center;
 }
 
 table {
