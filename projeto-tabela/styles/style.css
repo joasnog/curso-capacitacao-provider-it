@@ -1,8 +1,13 @@
+/* Abordagem de classes e ids, pq tive que reutilizar a mesma coisa 
+como cores, alinhamentos nos elementos */
+
 table {
   font-family: "Arial", sans-serif;
   font-size: 12px;
   font-weight: bold;
   width: 600px;
+  margin: auto;
+  background-color: #c7e7f3;
 }
 
 #table-header {
@@ -24,10 +29,6 @@ table {
 
 .dark-blue {
   color: #0d5188;
-}
-
-.light-blue-bg {
-  background-color: #c7e7f3;
 }
 
 .font-weight-normal {
