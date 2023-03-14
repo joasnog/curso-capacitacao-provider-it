@@ -8,11 +8,12 @@ h2 {
   font-family: initial;
 }
 
+/* Definindo a largura da tabela */
 table {
   width: 500px;
 }
 
-/* Aumentar a largura das celulas da situacao civil para alinhar melhor */
+/* Padronizando a largura das celulas que contém as opções de situação civil (solteiro, casado, viuvo). */
 .increase-width {
   width: 29%;
 }
