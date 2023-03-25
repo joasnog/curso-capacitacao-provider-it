@@ -1,11 +1,6 @@
-body tr {
+body {
   font-family: "Arial", sans-serif;
   font-size: 12px;
-}
-
-h2 {
-  /* Pega o valor inicial da fonte, não atribuindo o arial para o h2 */
-  font-family: initial;
 }
 
 /* Definindo a largura da tabela */
@@ -15,7 +10,7 @@ table {
 
 /* Padronizando a largura das celulas que contém as opções de situação civil (solteiro, casado, viuvo). */
 .increase-width {
-  width: 29%;
+  width: 30%;
 }
 
 /* Vai na tabela, pega o sexto elemento tr, pega o td dele e centraliza (botão) */
