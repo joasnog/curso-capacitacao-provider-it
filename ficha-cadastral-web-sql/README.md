@@ -6,8 +6,8 @@ Foram usados as tecnologias: HTML, CSS e JavaScript.
 
 ## Preview
 
-![screenshot](screenshots\screenshot.png)
-![screenshot](screenshots\screenshot_2.png)
+![screenshot](https://github.com/joasnog/curso-capacitacao-provider-it/blob/master/ficha-cadastral-web-sql/screenshots/screenshot.png)
+![screenshot](https://github.com/joasnog/curso-capacitacao-provider-it/blob/master/ficha-cadastral-web-sql/screenshots/screenshot_2.png)
 
 ## Nomenclatura de Tabela e Colunas
 
