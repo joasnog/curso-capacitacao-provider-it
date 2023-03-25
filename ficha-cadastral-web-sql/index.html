@@ -1,0 +1,129 @@
+<!-- 
+    Projeto de Ficha Cadastral Banco WebSQL do curso de capacitação Provider It
+    Professor: Luís Paiva
+    Autor: Idelfonso Joás de França Nogueira
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Cadastral</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+  <form id="form" onsubmit="return saveData()">
+    <table id="form-table">
+      <!-- Cabeçalho -->
+      <caption>
+        <h2>Ficha Cadastral</h2>
+      </caption>
+
+      <!-- Campo nome -->
+      <tr>
+        <td style="padding-right: 40px">
+          <label for="name">Nome:</label>
+        </td>
+        <td colspan="3">
+          <input type="text" size="55" id="name" class="increase-width" placeholder="Nome completo" required>
+        </td>
+      </tr>
+
+      <!-- Campo RG e CPF -->
+      <tr>
+        <td>
+          <label for="rg">RG:</label>
+        </td>
+        <td>
+          <input type="text" size="13" id="rg" placeholder="RG" required>
+        </td>
+        <td>
+          <label for="cpf">C.P.F.:</label>
+        </td>
+        <td>
+          <input id="cpf" maxlength="14" class="increase-width" placeholder="CPF" pattern=".{14,}"
+            title="XXX.XXX.XXX-XX" required>
+        </td>
+      </tr>
+
+      <!-- Campo CEP -->
+      <tr>
+        <td>
+          <label for="cep">CEP:</label>
+        </td>
+        <td colspan="3">
+          <input type="text" id="cep" size="13" maxlength="9" placeholder="CEP" pattern=".{9,}" title="XXXXX-XXX"
+            required>
+          <span id="cep-validation-message"></span>
+        </td>
+      </tr>
+
+      <!-- Campo Endereço -->
+      <tr>
+        <td>
+          <label for="address">Endereço:</label>
+        </td>
+        <td colspan="3">
+          <input type="text" size="55" id="address" class="increase-width" placeholder="Endereço" required>
+        </td>
+      </tr>
+
+      <!-- Campo Sexo -->
+      <tr>
+        <td>
+          <label for="sex">Sexo:</label>
+        </td>
+        <td>
+          <select id="sex">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+        </td>
+        <td style="width: 100px">
+          <label for="birthday">Data Nascimento:</label>
+        </td>
+        <td>
+          <input type="date" id="birthday" class="increase-width" min="1950-01-01" max="2023-01-01" required>
+        </td>
+      </tr>
+
+      <!-- Campo Situação Civil -->
+      <tr>
+        <td>Situação Civil</td>
+        <td style="text-align: center;">
+          <input type="radio" id="solteiro" name="situacao-civil" value="Solteiro" required>
+          <label>Solteiro(a)</label>
+        </td>
+        <td style="text-align: center;">
+          <input type="radio" id="casado" name="situacao-civil" value="Casado">
+          <label>Casado(a)</label>
+        </td>
+        <td style="text-align: center;">
+          <input type="radio" id="viuvo" name="situacao-civil" value="Víuvo">
+          <label>Viúvo(a)</label>
+        </td>
+      </tr>
+
+    </table>
+
+
+    <div>
+      <button type="submit" class="save-btn">Salvar Dados</button>
+      <button type="reset">Limpar Dados</button>
+    </div>
+  </form>
+
+  <div>
+    <span id="bottom-message"></span>
+    <button onclick="window.location.href='user-list.html'">Ver Lista</button>
+  </div>
+
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f1f0f0;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+/* Definindo os estilos da tabela */
+#form-table {
+  width: 500px;
+  margin: 0 auto;
+  border-spacing: 5px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Vai na tabela, pega o setimo elemento tr, pega o td dele e centraliza (botão) */
+tr:nth-child(7),
+tr:nth-child(8) {
+  text-align: center;
+  width: 100px;
+  margin-top: 5px;
+}
+
+.save-btn {
+  background-color: #1678c2;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  background-color: #f8f8f8;
+  margin: 0px 8px 0px 8px;
+  cursor: pointer;
+}
+
+.increase-width {
+  width: 100%;
+}
+
+div {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#bottom-message {
+  margin-top: 48px;
+  font-size: 12px;
+}
+
+/* Selecione a tabela #data-table e todos os elementos th e td filhos de #data-table */
+#data-table,
+#data-table th,
+#data-table td {
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px;
+  background: white;
+  border: 2px solid #f1f0f0;
+}
