@@ -4,14 +4,6 @@ document.getElementById("birthday").max = new Date().toISOString().split('T')[0]
 // Obter o banco de dados
 const db = initDB();
 
-// db.transaction(function (tx) {
-//     tx.executeSql('DROP TABLE IF EXISTS users');
-// });
-
-// db.transaction(function (tx) {
-//     tx.executeSql('DROP TABLE IF EXISTS sqlite_sequence');
-// });
-
 db.transaction((tx) => {
     tx.executeSql('SELECT * FROM users', [], (tx, results) => {
         let len = results.rows.length, i;

@@ -30,7 +30,8 @@
           <label for="name">Nome:</label>
         </td>
         <td colspan="3">
-          <input type="text" size="55" id="name" class="increase-width" placeholder="Nome completo" required>
+          <input type="text" size="55" id="name" class="increase-width" placeholder="Nome completo" pattern=".{4,}"
+            title="Deve ter ao menos 4 caracteres" required>
         </td>
       </tr>
 
