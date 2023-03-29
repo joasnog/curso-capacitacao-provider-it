@@ -6,8 +6,8 @@ Foram usados as tecnologias: HTML, CSS e JavaScript.
 
 ## Preview
 
-![screenshot](https://github.com/joasnog/curso-capacitacao-provider-it/blob/master/ficha-cadastral-web-sql/screenshots/screenshot.png)
-![screenshot](https://github.com/joasnog/curso-capacitacao-provider-it/blob/master/ficha-cadastral-web-sql/screenshots/screenshot_2.png)
+![screenshot](https://raw.githubusercontent.com/joasnog/curso-capacitacao-provider-it/master/ficha-cadastral-web-sql/screenshots/screenshot.png?token=GHSAT0AAAAAACASCWIT3EZVH72KCHCIEFBYZBDNQYQ)
+![screenshot](https://github.com/joasnog/curso-capacitacao-provider-it/blob/master/ficha-cadastral-web-sql/screenshots/screenshot_2.png?raw=true)
 
 ## Nomenclatura de Tabela e Colunas
 
@@ -22,7 +22,7 @@ O banco de dados que foi modelado foi do tipo relacional, uma estrutura simples 
 
 ---
 
-- users: Persiste os dados de um usuário: Nome, CEP, Endereço, CPF, RG, Data de Nascimento, Sexo e Situação Civil.
+- users: Persiste os dados de um usuário: Nome, CEP, Endereço, Número, Complemento, CPF, RG, Data de Nascimento, Sexo e Situação Civil.
 
 ### Estrutura
 
@@ -38,6 +38,8 @@ A tabela **users** possui as seguintes colunas:
 | cpf            | TEXT NOT NULL                     |
 | cep            | TEXT NOT NULL                     |
 | address        | TEXT NOT NULL                     |
+| number         | TEXT NOT NULL                     |
+| complement     | TEXT NOT NULL                     |
 | sex            | TEXT NOT NULL                     |
 | birthday       | TEXT NOT NULL                     |
 | marital_status | TEXT NOT NULL                     |

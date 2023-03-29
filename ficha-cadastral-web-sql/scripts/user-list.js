@@ -25,7 +25,7 @@ function loadTable() {
                 let line = tableBody.insertRow();
 
                 // Povoando a tabela
-                for (let j = 0; j < 8; j++) {
+                for (let j = 0; j < 10; j++) {
                     let cell = line.insertCell();
                     switch (j) {
                         case 0:
@@ -44,17 +44,53 @@ function loadTable() {
                             cell.innerText = data.address;
                             break;
                         case 5:
-                            cell.innerText = data.sex;
-                            break;
+                            data.complement != ""
+                                ?
+                                cell.innerText = data.complement
+                                :
+                                cell.innerText = "Não preenchido";
+                            break
                         case 6:
-                            cell.innerText = data.birthday;
+                            cell.innerText = data.number;
                             break;
                         case 7:
+                            cell.innerText = data.sex;
+                            break;
+                        case 8:
+                            cell.innerText = data.birthday;
+                            break;
+                        case 9:
                             cell.innerText = data.marital_status;
                             break;
                     }
                 }
+
+                deleteBtn(db, line, data);
             }
         }, null);
+    });
+}
+
+function deleteBtn(db, line, data) {
+    let deleteCell = line.insertCell();
+
+    let deleteButton = document.createElement("button");
+    deleteButton.innerText = "Excluir";
+    deleteButton.setAttribute("data-id", data.id);
+
+    deleteCell.appendChild(deleteButton);
+
+    deleteButton.addEventListener("click", () => {
+        db.transaction((tx) => {
+            tx.executeSql(
+                `DELETE FROM users WHERE id = ?`,
+                [data.id],
+                (tx, result) => {
+                    // Remove a linha da tabela na posição
+                    window.location.reload();
+                },
+                null
+            );
+        });
     });
 }
