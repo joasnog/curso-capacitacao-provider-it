@@ -1,0 +1,41 @@
+.movie-details {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-filter {
+  filter: brightness(0.2);
+}
+
+.movie-details img {
+  width: 100%;
+  height: calc(100vh - 60px);
+  object-fit: cover;
+  user-select: none;
+}
+
+.movie-info {
+  max-width: 800px;
+  position: absolute;
+  padding: 40px 40px;
+}
+
+.movie-info a {
+  margin-right: 12px;
+}
+
+.movie-rating {
+  margin: 10px 0 20px 0;
+}
+
+.movie-rating span {
+  padding-right: 12px;
+  color: grey;
+}
+
+.button-trailer {
+  margin-right: 12px;
+}
