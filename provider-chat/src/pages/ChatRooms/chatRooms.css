@@ -1,0 +1,21 @@
+.chat-rooms-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+  text-align: center;
+}
+
+ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 4px;
+  margin-right: 4px;
+}

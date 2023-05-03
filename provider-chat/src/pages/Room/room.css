@@ -1,0 +1,22 @@
+.chat-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.input-area {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.input {
+  width: 95%;
+  margin-right: 8px;
+}

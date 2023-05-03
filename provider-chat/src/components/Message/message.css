@@ -1,0 +1,51 @@
+.my-message {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-bubble {
+  border-radius: 20px 20px 20px 0;
+  padding: 15px;
+  background-color: #c298d8;
+  color: #1c2c4c;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.bg-grey {
+  background-color: #d3d3d3;
+}
+
+.avatar-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 10px; */
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin: 0 10px 0 0;
+}
+
+.user-message-date {
+  width: 100%;
+  text-align: end;
+}
+
+.user-message-date span {
+  font-size: 12px;
+  opacity: 0.8;
+}

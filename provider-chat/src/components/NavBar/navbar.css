@@ -1,0 +1,20 @@
+.nav-bar {
+  padding: 2px 20px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  background-color: #000;
+  top: 0;
+}
+
+.nav-bar h1 {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
