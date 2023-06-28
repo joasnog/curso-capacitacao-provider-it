@@ -13,12 +13,11 @@ import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
 import { Sidebar } from 'primereact/sidebar';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { db } from '../../services/firebaseConnection';
-import { doc, collection, onSnapshot, deleteDoc } from 'firebase/firestore';
-import { DateToString, StringToDate } from '../../utils/DateUtils';
+import { DateToString } from '../../utils/DateUtils';
 import CustomerDialog from '../../components/CustomerDialog';
 
 import '../../index.css';
+import api from '../../services/api';
 
 export default function Dashboard() {
     const { user, logout } = useContext(AuthContext);
@@ -31,20 +30,54 @@ export default function Dashboard() {
     const [customerData, setCustomerData] = useState({});
     const [selectedCustomer, setSelectedCustomer] = useState({});
 
-    const toast = useRef(null);// eslint-disable-line react-hooks/exhaustive-deps
+    const toast = useRef(null);
 
-    async function handleLogout() {
-        await logout();
+    async function getCustomers() {
+        let list = [];
+
+        let customers = await api.get("/customers");
+
+        if (customers.data) {
+            customers.data.forEach((customer) => {
+                const customerData = {
+                    'id': customer.id,
+                    'name': customer.name,
+                    'phone': customer.phone,
+                    'birthday': new Date(customer.birthday),
+                    'cpf': customer.cpf,
+                    'gender': customer.gender,
+                    'address': customer.address,
+                    'number': customer.number,
+                    'complement': customer.complement,
+                    'cep': customer.cep,
+                    'createdBy': customer.createdBy,
+                };
+
+                list.push(customerData);
+            })
+        }
+
+        setCustomers(list);
     }
+
+    useEffect(() => {
+        getCustomers();
+        initFilters();
+    }, []);
 
     async function handleDeleteCustomer(id) {
         try {
-            await deleteDoc(doc(db, 'customers', id));
+            await api.delete(`/customers/${id}`);
+            getCustomers();
             toast.current.show({ severity: 'success', summary: 'Sucesso', detail: 'Excluído com sucesso.', life: 3000 });
         } catch (error) {
             toast.current.show({ severity: 'error', summary: 'Erro', detail: 'Ocorreu um erro.', life: 3000 });
         }
     };
+
+    async function handleLogout() {
+        await logout();
+    }
 
     const confirmDelete = (id) => {
         confirmDialog({
@@ -75,40 +108,12 @@ export default function Dashboard() {
         );
     }
 
-    useEffect(() => {
-        async function getCustomers() {
-            // eslint-disable-next-line no-unused-vars
-            const unsub = onSnapshot(collection(db, 'customers'), (snapshot) => {
-                let list = [];
-                snapshot.forEach((doc) => {
-                    const customerData = {
-                        'id': doc.id,
-                        'name': doc.data().name,
-                        'phone': doc.data().phone,
-                        'birthday': StringToDate(doc.data().birthday),
-                        'cpf': doc.data().cpf,
-                        'gender': doc.data().gender,
-                        'address': doc.data().address,
-                        'number': doc.data().number,
-                        'complement': doc.data().complement,
-                        'cep': doc.data().cep,
-                        'createdBy': doc.data().createdBy,
-                    };
-
-                    list.push(customerData);
-                })
-                setCustomers(list);
-            })
-        }
-        getCustomers();
-        initFilters();
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
     const formatDate = (value) => {
         return value.toLocaleDateString("pt-BR", {
             day: "2-digit",
             month: "2-digit",
             year: "numeric",
+            timeZone: 'UTC',
         });
     };
 
@@ -287,6 +292,7 @@ export default function Dashboard() {
                 toast={toast}
                 isEditing={isEditing}
                 customerData={customerData}
+                getCustomers={getCustomers}
                 onHide={() => {
                     setIsEditing(false);
                     setCustomerData({});
